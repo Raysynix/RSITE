@@ -1,13 +1,17 @@
-# RAYSYNIX — Cloudflare-ready website
+# RAYSYNIX Website v2
 
-This implementation uses the supplied Canva desktop and mobile exports as the visual source of truth.
+This build uses the newly supplied Canva desktop and mobile designs as the visual source of truth.
 
-## Fixed implementation rules
-- All visible CTA/button hotspots link to Telegram: https://t.me/Raysynix
-- FAQ is interactive: click a FAQ row to open its answer.
-- Desktop uses the supplied 1440×900 screens.
-- Mobile uses the supplied 390×844 screens.
-- No redesign or content restructuring was added.
+## Improvements in this version
+- Fixed/stationary header on desktop and mobile.
+- All CTA buttons work on mobile and desktop and link only to `https://t.me/Raysynix`.
+- FAQ rebuilt as a real accessible accordion (no blank white blocks).
+- High-density mobile images included (`@3x`) for sharper rendering on Retina/high-DPI phones.
+- High-density desktop images included (`@2x`).
+- Below-the-fold images lazy-load for better performance.
+- Layout is centered and capped to the original Canva width so the design does not stretch/distort on large screens.
+- Mobile and desktop assets switch automatically at 767px.
 
-## Cloudflare Pages
-Upload these files to the root of the GitHub repository, then connect the repository to Cloudflare Pages. No build command is required for this static site; the output directory is the repository root.
+## GitHub / Cloudflare update
+Replace the old repository contents with the contents of this folder, keeping `index.html` at repository root.
+Cloudflare's existing Git deployment should automatically redeploy after you commit the changes.

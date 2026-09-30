@@ -3,119 +3,199 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080b19">
+  <meta name="description" content="RAYSYNIX — turning creator expertise and audience intelligence into useful digital product opportunities.">
   <title>RAYSYNIX — Ideas to Useful Things</title>
-  <meta name="description" content="RAYSYNIX — Creator Product Studio. Ideas to useful things.">
+  <link rel="preload" as="image" href="assets/mobile/1@3x.png" media="(max-width: 767px)">
+  <link rel="preload" as="image" href="assets/desktop/1@2x.png" media="(min-width: 768px)">
   <style>
-    :root{--bg:#080a17;--blue:#0845ff;--white:#fff;--muted:#aeb4c7}
+    :root{
+      --bg:#080b19;
+      --panel:#06133d;
+      --blue:#0a58ff;
+      --text:#f7f7fb;
+      --muted:#b7bdd0;
+      --line:rgba(255,255,255,.12);
+      --desktop-max:1440px;
+    }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;background:var(--bg)}
-    body{margin:0;background:var(--bg);font-family:Arial,Helvetica,sans-serif;color:var(--white);overflow-x:hidden}
-    .screen{position:relative;width:100%;max-width:1440px;margin:0 auto;line-height:0}
-    .screen img{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none}
-    .hotspot{position:absolute;display:block;z-index:5;border-radius:14px;cursor:pointer;outline:none}
-    .hotspot:focus-visible{box-shadow:0 0 0 3px #fff,0 0 0 6px var(--blue)}
-    .telegram{left:81.4%;top:10.8%;width:13.9%;height:5.9%}
-    .hero-chat{left:4.1%;top:71.0%;width:18.5%;height:7.0%}
-    .hero-how{left:24.3%;top:71.0%;width:17%;height:7.0%}
-    .apply{left:35.5%;top:63.3%;width:29%;height:6.5%}
-    .screen6-apply{left:35.5%;top:63.3%;width:29%;height:6.5%}
-    .faq-hit{position:absolute;left:4.1%;width:91.8%;height:5.1%;z-index:6;cursor:pointer;border-radius:8px}
-    .faq1{top:75.7%}.faq2{top:81.0%}.faq3{top:86.2%}.faq4{top:91.4%}.faq5{top:96.4%;height:3.4%}
-    dialog{border:0;padding:0;background:transparent;color:inherit;width:min(680px,calc(100vw - 32px));max-width:680px}
-    dialog::backdrop{background:rgba(0,0,0,.72);backdrop-filter:blur(5px)}
-    .modal{background:#080a17;border:1px solid #153fd1;border-radius:20px;padding:28px;box-shadow:0 24px 80px rgba(0,0,0,.5);line-height:1.45}
-    .modal .tag{font-size:11px;font-weight:700;letter-spacing:.08em;color:#1f5cff;text-transform:uppercase;margin-bottom:12px}
-    .modal h2{font-size:24px;line-height:1.15;margin:0 38px 12px 0}
-    .modal p{font-size:15px;line-height:1.55;color:#d8dcea;margin:0 0 22px}
-    .modal-actions{display:flex;gap:10px;align-items:center}
-    .modal a,.modal button{appearance:none;border:0;border-radius:10px;padding:12px 16px;font-weight:700;font-size:14px;text-decoration:none;cursor:pointer}
-    .modal a{background:#0845ff;color:#fff}.modal button{background:#151a2c;color:#d8dcea}
-    .close-x{position:absolute;right:28px;top:22px;background:transparent!important;padding:4px!important;font-size:24px!important;color:#aeb4c7!important}
-    @media(max-width:600px){
-      .screen{max-width:390px}
-      .telegram{left:74.5%;top:9.2%;width:21%;height:4.8%}
-      .hero-chat{left:5.8%;top:71.5%;width:31.5%;height:6.5%}
-      .hero-how{left:38.5%;top:71.5%;width:31%;height:6.5%}
-      .apply{left:23%;top:64.0%;width:54%;height:5.0%}
-      .screen6-apply{left:23%;top:64.0%;width:54%;height:5.0%}
-      .faq-hit{left:5%;width:90%;height:5.0%}
-      .faq1{top:75.0%}.faq2{top:80.1%}.faq3{top:85.1%}.faq4{top:90.1%}.faq5{top:95.0%;height:4%}
-      .modal{padding:22px}.modal h2{font-size:21px}.modal p{font-size:14px}
-      .modal-actions{flex-direction:column;align-items:stretch}.modal a,.modal button{text-align:center}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+
+    /* Fixed header: exact Canva header, centered and scaled without distortion. */
+    .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--bg);display:flex;justify-content:center;isolation:isolate}
+    .header-shell{position:relative;width:min(100vw,var(--desktop-max));aspect-ratio:12/1;max-height:120px;background:var(--bg)}
+    .header-shell picture,.header-shell img{display:block;width:100%;height:100%;object-fit:fill}
+    .hotspot{position:absolute;z-index:3;display:block;border-radius:999px;outline-offset:3px}
+    .hotspot:focus-visible{outline:2px solid #fff}
+    .header-desktop-nav{display:block}
+    .h-how{left:44.1%;top:21%;width:10.7%;height:58%}
+    .h-build{left:55.0%;top:21%;width:11.1%;height:58%}
+    .h-partner{left:66.6%;top:21%;width:9.4%;height:58%}
+    .h-faq{left:76.1%;top:21%;width:4.6%;height:58%}
+    .h-telegram{left:81.2%;top:13%;width:17.2%;height:74%}
+
+    main{padding-top:min(8.333vw,120px)}
+    .screen{scroll-margin-top:120px;position:relative;width:min(100%,var(--desktop-max));margin:0 auto;background:var(--bg);line-height:0;overflow:hidden}
+    .screen picture,.screen img{display:block;width:100%;height:auto}
+    .screen-link{position:absolute;display:block;z-index:4;border-radius:999px;outline-offset:3px}
+    .screen-link:focus-visible{outline:2px solid #fff}
+    .hero-cta{left:3.2%;top:91.0%;width:21.8%;height:7.3%}
+    .final-cta{left:29.5%;top:78.3%;width:41.0%;height:8.5%}
+    .telegram-social{left:84.3%;top:65.2%;width:12.0%;height:9%}
+
+    /* FAQ replaces the flattened Canva FAQ so it remains sharp, usable and responsive. */
+    .faq-wrap{scroll-margin-top:120px;width:min(100%,var(--desktop-max));margin:0 auto;background:var(--bg);padding:20px 46px 42px}
+    .faq-title{margin:0 0 20px;color:var(--blue);font-size:21px;font-weight:700;letter-spacing:.01em}
+    .faq-list{border-top:1px solid transparent}
+    .faq-item{border-bottom:1px solid var(--line)}
+    .faq-q{width:100%;min-height:52px;border:0;background:transparent;color:var(--text);display:grid;grid-template-columns:1fr 36px;align-items:center;text-align:left;padding:10px 0;cursor:pointer;font-size:20px;line-height:1.25}
+    .faq-q .plus{justify-self:end;color:var(--blue);font-size:25px;font-weight:600;transition:transform .22s ease}
+    .faq-item.open .plus{transform:rotate(45deg)}
+    .faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .25s ease}
+    .faq-a>div{overflow:hidden}
+    .faq-a p{margin:0;padding:0 70px 18px 0;color:var(--muted);font-size:16px;line-height:1.6;max-width:1000px}
+    .faq-item.open .faq-a{grid-template-rows:1fr}
+
+    .visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+    @media (max-width:767px){
+      .screen,.faq-wrap{scroll-margin-top:100px}
+      .header-shell{width:100vw;aspect-ratio:390/90;max-height:none}
+      .header-desktop-nav{display:none}
+      .h-telegram{left:69.2%;top:27%;width:27.5%;height:48%}
+      main{padding-top:calc(100vw * 90 / 390)}
+      .screen{width:100vw;max-width:390px}
+      .hero-cta{left:4.6%;top:94.1%;width:50.3%;height:5.2%}
+      .final-cta{left:5.4%;top:78.6%;width:87.0%;height:5.0%}
+      .telegram-social{left:4.4%;top:49.2%;width:43%;height:7%}
+      .faq-wrap{scroll-margin-top:120px;width:100vw;max-width:390px;padding:3px 22px 30px}
+      .faq-title{font-size:12px;margin:0 0 10px}
+      .faq-q{min-height:43px;grid-template-columns:1fr 28px;font-size:14px;line-height:1.25;padding:8px 0}
+      .faq-q .plus{font-size:18px}
+      .faq-a p{padding:0 30px 14px 0;font-size:13px;line-height:1.5}
     }
-    @media(prefers-reduced-motion:no-preference){dialog{animation:fade .18s ease-out}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}}
+    @media (min-width:768px) and (max-width:1439px){
+      .faq-title{font-size:1.45vw}.faq-q{font-size:1.38vw}.faq-a p{font-size:1.1vw}
+    }
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.faq-a,.faq-q .plus{transition:none}}
   </style>
 </head>
 <body>
-  <main aria-label="RAYSYNIX landing page">
-    <section class="screen" id="hero">
-      <picture><source media="(max-width:600px)" srcset="assets/mobile/1.png"><img src="assets/desktop/1.png" alt="RAYSYNIX Creator Product Studio — hero"></picture>
-      <a class="hotspot telegram" href="https://t.me/Raysynix" target="_blank" rel="noopener" aria-label="Start for free on Telegram"></a>
-      <a class="hotspot hero-chat" href="https://t.me/Raysynix" target="_blank" rel="noopener" aria-label="Start a conversation on Telegram"></a>
-      <a class="hotspot hero-how" href="https://t.me/Raysynix" target="_blank" rel="noopener" aria-label="See how it works on Telegram"></a>
+  <header class="site-header" aria-label="RAYSYNIX navigation">
+    <div class="header-shell">
+      <picture>
+        <source media="(max-width: 767px)" srcset="assets/mobile/1.png 1x, assets/mobile/1@3x.png 3x">
+        <img src="assets/desktop/1.png" srcset="assets/desktop/1.png 1x, assets/desktop/1@2x.png 2x" alt="RAYSYNIX navigation header" width="1440" height="120" fetchpriority="high" decoding="sync">
+      </picture>
+      <a class="hotspot header-desktop-nav h-how" href="#how" aria-label="How It Works"></a>
+      <a class="hotspot header-desktop-nav h-build" href="#build" aria-label="What To Build"></a>
+      <a class="hotspot header-desktop-nav h-partner" href="#partner" aria-label="Who It's For"></a>
+      <a class="hotspot header-desktop-nav h-faq" href="#faq" aria-label="FAQ"></a>
+      <a class="hotspot h-telegram" href="https://t.me/Raysynix" target="_blank" rel="noopener" aria-label="Start for free on Telegram"></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="screen" id="hero" aria-label="Creator Product Studio">
+      <picture>
+        <source media="(max-width: 767px)" srcset="assets/mobile/2.png 1x, assets/mobile/2@3x.png 3x">
+        <img src="assets/desktop/2.png" srcset="assets/desktop/2.png 1x, assets/desktop/2@2x.png 2x" alt="Turn your content into a digital product business" fetchpriority="high" decoding="async">
+      </picture>
+      <a class="screen-link hero-cta" href="https://t.me/Raysynix" target="_blank" rel="noopener" aria-label="Start a conversation on Telegram"></a>
     </section>
 
-    <section class="screen" id="opportunity">
-      <picture><source media="(max-width:600px)" srcset="assets/mobile/2.png"><img src="assets/desktop/2.png" alt="The opportunity"></picture>
-      <a class="hotspot telegram" href="https://t.me/Raysynix" target="_blank" rel="noopener" aria-label="Start for free on Telegram"></a>
+    <section class="screen" id="opportunity" aria-label="Audience opportunity">
+      <picture>
+        <source media="(max-width: 767px)" srcset="assets/mobile/3.png 1x, assets/mobile/3@3x.png 3x">
+        <img src="assets/desktop/3.png" srcset="assets/desktop/3.png 1x, assets/desktop/3@2x.png 2x" alt="Your audience may already be telling you what to build" loading="lazy" decoding="async">
+      </picture>
     </section>
 
-    <section class="screen" id="mechanism">
-      <picture><source media="(max-width:600px)" srcset="assets/mobile/3.png"><img src="assets/desktop/3.png" alt="The mechanism"></picture>
-      <a class="hotspot telegram" href="https://t.me/Raysynix" target="_blank" rel="noopener" aria-label="Start for free on Telegram"></a>
+    <section class="screen" id="how" aria-label="How it works">
+      <picture>
+        <source media="(max-width: 767px)" srcset="assets/mobile/4.png 1x, assets/mobile/4@3x.png 3x">
+        <img src="assets/desktop/4.png" srcset="assets/desktop/4.png 1x, assets/desktop/4@2x.png 2x" alt="We work backwards from evidence" loading="lazy" decoding="async">
+      </picture>
     </section>
 
-    <section class="screen" id="products">
-      <picture><source media="(max-width:600px)" srcset="assets/mobile/4.png"><img src="assets/desktop/4.png" alt="What we build"></picture>
-      <a class="hotspot telegram" href="https://t.me/Raysynix" target="_blank" rel="noopener" aria-label="Start for free on Telegram"></a>
+    <section class="screen" id="build" aria-label="What we build">
+      <picture>
+        <source media="(max-width: 767px)" srcset="assets/mobile/5.png 1x, assets/mobile/5@3x.png 3x">
+        <img src="assets/desktop/5.png" srcset="assets/desktop/5.png 1x, assets/desktop/5@2x.png 2x" alt="Creator-native digital product systems" loading="lazy" decoding="async">
+      </picture>
     </section>
 
-    <section class="screen" id="framework">
-      <picture><source media="(max-width:600px)" srcset="assets/mobile/5.png"><img src="assets/desktop/5.png" alt="Product framework"></picture>
-      <a class="hotspot telegram" href="https://t.me/Raysynix" target="_blank" rel="noopener" aria-label="Start for free on Telegram"></a>
+    <section class="screen" id="partner" aria-label="Product opportunity and partnership model">
+      <picture>
+        <source media="(max-width: 767px)" srcset="assets/mobile/6.png 1x, assets/mobile/6@3x.png 3x">
+        <img src="assets/desktop/6.png" srcset="assets/desktop/6.png 1x, assets/desktop/6@2x.png 2x" alt="Show the path from expertise to product" loading="lazy" decoding="async">
+      </picture>
     </section>
 
-    <section class="screen" id="faq">
-      <picture><source media="(max-width:600px)" srcset="assets/mobile/6.png"><img src="assets/desktop/6.png" alt="Product system and frequently asked questions"></picture>
-      <a class="hotspot telegram screen6-apply" href="https://t.me/Raysynix" target="_blank" rel="noopener" aria-label="Apply for a product opportunity audit on Telegram"></a>
-      <button class="faq-hit faq1" type="button" data-faq="0" aria-label="Open FAQ: What exactly do you do?"></button>
-      <button class="faq-hit faq2" type="button" data-faq="1" aria-label="Open FAQ: Do I need an existing digital product?"></button>
-      <button class="faq-hit faq3" type="button" data-faq="2" aria-label="Open FAQ: How large does my audience need to be?"></button>
-      <button class="faq-hit faq4" type="button" data-faq="3" aria-label="Open FAQ: Who owns the product?"></button>
-      <button class="faq-hit faq5" type="button" data-faq="4" aria-label="Open FAQ: How does the partnership and revenue model work?"></button>
+    <section class="screen" id="why" aria-label="Why RAYSYNIX">
+      <picture>
+        <source media="(max-width: 767px)" srcset="assets/mobile/7.png 1x, assets/mobile/7@3x.png 3x">
+        <img src="assets/desktop/7.png" srcset="assets/desktop/7.png 1x, assets/desktop/7@2x.png 2x" alt="The product starts with what already works" loading="lazy" decoding="async">
+      </picture>
     </section>
 
-    <section class="screen" id="cta">
-      <picture><source media="(max-width:600px)" srcset="assets/mobile/7.png"><img src="assets/desktop/7.png" alt="Final call to action"></picture>
-      <a class="hotspot telegram apply" href="https://t.me/Raysynix" target="_blank" rel="noopener" aria-label="Apply for a product opportunity audit on Telegram"></a>
+    <section class="faq-wrap" id="faq" aria-labelledby="faq-heading">
+      <h2 class="faq-title" id="faq-heading">FAQ</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false"><span>What exactly do you do?</span><span class="plus" aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>We study your content and audience to identify problems people repeatedly want solved, then turn your demonstrated expertise into a creator-native digital product and help take it from product architecture through launch and optimization.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false"><span>Do I need an existing digital product?</span><span class="plus" aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>No. The process is designed to identify a product opportunity from your existing content, audience questions, expertise and frameworks, then architect the product around the opportunity we discover.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false"><span>How large does my audience need to be?</span><span class="plus" aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>The intended fit is generally creators with an engaged audience of roughly 10K–100K followers. Engagement, demonstrated expertise and evidence of audience demand matter alongside audience size.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false"><span>Who owns the product?</span><span class="plus" aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>The exact ownership structure is discussed as part of the partnership. The creator contributes expertise, audience, brand and content while the operating side handles the product-development system.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false"><span>How does the partnership/ revenue model work?</span><span class="plus" aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><p>The partnership structure and exact revenue-share terms are discussed during the application process. The core principle is simple: when the product succeeds, both sides benefit.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="final" aria-label="Apply for a product opportunity audit">
+      <picture>
+        <source media="(max-width: 767px)" srcset="assets/mobile/8.png 1x, assets/mobile/8@3x.png 3x">
+        <img src="assets/desktop/8.png" srcset="assets/desktop/8.png 1x, assets/desktop/8@2x.png 2x" alt="Your next product may already be hiding inside your content" loading="lazy" decoding="async">
+      </picture>
+      <a class="screen-link final-cta" href="https://t.me/Raysynix" target="_blank" rel="noopener" aria-label="Apply for a product opportunity audit on Telegram"></a>
+      <a class="screen-link telegram-social" href="https://t.me/Raysynix" target="_blank" rel="noopener" aria-label="Open RAYSYNIX on Telegram"></a>
     </section>
   </main>
 
-  <dialog id="faqDialog">
-    <div class="modal">
-      <button class="close-x" id="closeFaq" type="button" aria-label="Close FAQ">×</button>
-      <div class="tag">RAYSYNIX FAQ</div>
-      <h2 id="faqTitle"></h2>
-      <p id="faqAnswer"></p>
-      <div class="modal-actions">
-        <a href="https://t.me/Raysynix" target="_blank" rel="noopener">Continue on Telegram ↗</a>
-        <button id="closeFaq2" type="button">Close</button>
-      </div>
-    </div>
-  </dialog>
-
   <script>
-    const faqs = [
-      ["What exactly do you do?","We study your content and audience to identify problems people repeatedly want solved. We then turn your demonstrated expertise into a creator-native digital product and help take it from product architecture through launch and optimization."],
-      ["Do I need an existing digital product?","No. The process is designed to identify a product opportunity from your existing content, audience questions, expertise and frameworks. The product can then be architected around the opportunity we discover."],
-      ["How large does my audience need to be?","The intended fit is generally creators with an engaged audience of roughly 10K–100K followers, recurring questions around a specific subject and demonstrated expertise. Audience size alone isn't the only consideration; engagement, expertise and evidence of audience demand matter as well."],
-      ["Who owns the product?","The exact ownership structure should be discussed as part of the partnership. The model is designed as a partnership rather than a standard service subscription, with the creator contributing expertise, audience, brand and content while the operator handles the product-development side."],
-      ["How does the partnership / revenue model work?","Rather than publishing a fixed revenue-share percentage on the landing page, the partnership structure can be discussed during the application process. The principle is simple: when the product succeeds, both sides benefit."]
-    ];
-    const dialog=document.getElementById('faqDialog'), title=document.getElementById('faqTitle'), answer=document.getElementById('faqAnswer');
-    document.querySelectorAll('[data-faq]').forEach(btn=>btn.addEventListener('click',()=>{const [t,a]=faqs[Number(btn.dataset.faq)]; title.textContent=t; answer.textContent=a; dialog.showModal();}));
-    const close=()=>dialog.close(); document.getElementById('closeFaq').onclick=close; document.getElementById('closeFaq2').onclick=close;
-    dialog.addEventListener('click',e=>{if(e.target===dialog) close();});
+    (() => {
+      const items = [...document.querySelectorAll('.faq-item')];
+      items.forEach(item => {
+        const button = item.querySelector('.faq-q');
+        button.addEventListener('click', () => {
+          const opening = !item.classList.contains('open');
+          items.forEach(other => {
+            other.classList.remove('open');
+            other.querySelector('.faq-q').setAttribute('aria-expanded','false');
+          });
+          if (opening) {
+            item.classList.add('open');
+            button.setAttribute('aria-expanded','true');
+          }
+        });
+      });
+    })();
   </script>
 </body>
 </html>

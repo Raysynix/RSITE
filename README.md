@@ -1,16 +1,20 @@
-# RAYSYNIX — fully coded frontend
+# RAYSYNIX V4 — Targeted Adjustments
 
-This version rebuilds the Canva layout with real HTML/CSS/JavaScript rather than flattened full-page screenshots.
+This package preserves the fully coded RAYSYNIX V3 design and makes only the requested changes:
 
-## Locked design rules
+- Uses the approved transparent continuation-style RAYSYNIX logo.
+- Prevents the mobile logo from being cropped.
+- Places the mobile **Start A Conversation** CTA below the Intelligence Layer, matching the Canva mobile reference.
+- Reduces excessive vertical spacing between sections on desktop and mobile.
+- Prevents the page from restoring/jumping to the bottom on initial load.
+- Keeps the full-width fixed header, FAQ behavior, fonts, colors, Telegram links and all other content unchanged.
+
+## Fonts
 - Headings: Manrope
 - Body/navigation: Inter
-- Logo: RAYSYNIX V2 logo asset
-- Desktop header: full-width and fixed/sticky
-- Mobile header: full-width and fixed/sticky
-- CTA buttons: Telegram @Raysynix
-- FAQ: real responsive accordion
-- No backend required
+
+## CTA destination
+- Telegram: https://t.me/Raysynix
 
 ## Deploy
-Upload `index.html`, `styles.css`, `script.js`, and `assets/` to the root of the existing GitHub repository. Cloudflare will redeploy from the connected branch.
+Upload these files to the root of the existing GitHub repository connected to Cloudflare. The new commit should trigger a redeploy automatically.

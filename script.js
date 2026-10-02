@@ -1,4 +1,15 @@
 (() => {
+  // Prevent browser scroll restoration from reopening the landing page near the bottom.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+  const resetToTop = () => {
+    if (!location.hash) window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  };
+  window.addEventListener('load', resetToTop, { once: true });
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted || !location.hash) requestAnimationFrame(resetToTop);
+  });
+
   const items = [...document.querySelectorAll('.faq-item')];
   items.forEach((item) => {
     const button = item.querySelector('.faq-question');

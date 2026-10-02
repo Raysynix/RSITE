@@ -18,3 +18,11 @@ This package preserves the fully coded RAYSYNIX V3 design and makes only the req
 
 ## Deploy
 Upload these files to the root of the existing GitHub repository connected to Cloudflare. The new commit should trigger a redeploy automatically.
+
+
+## V5 final requested refinements
+- Desktop header logo enlarged and lengthened while preserving alignment.
+- Desktop section-to-section spacing standardized to the final CTA reference rhythm.
+- Mobile intelligence layer and Start A Conversation CTA use equal vertical spacing.
+- Mobile section-to-section spacing standardized to the hero kicker/headline reference rhythm.
+- Displayed Instagram and Telegram handles use lowercase `@raysynix`.

@@ -194,3 +194,80 @@ p{margin-top:0}
   .brand img,
   .brand img[src$="logo-header.png"]{max-width:min(200px,56vw);max-height:60px}
 }
+
+
+/* V5 final requested refinements
+   - larger/longer desktop logo, well positioned
+   - desktop section-to-section rhythm = 58px total (READY WHEN YOU ARE → final headline reference)
+   - mobile section-to-section rhythm = 38px total (CREATOR PRODUCT STUDIO → hero headline reference)
+   - equal mobile spacing above intelligence visual and below it before CTA
+*/
+@media (min-width: 1060px){
+  .header-inner{
+    grid-template-columns:minmax(390px,1fr) auto auto;
+    gap:26px;
+    padding-left:clamp(34px,3.5vw,58px);
+    padding-right:clamp(34px,3.5vw,58px);
+  }
+  .brand{
+    width:390px;
+    max-width:31vw;
+    height:104px;
+    display:flex;
+    align-items:center;
+    overflow:visible;
+  }
+  .brand img,
+  .brand img[src$="logo-header.png"]{
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:92px;
+    object-fit:contain;
+    object-position:left center;
+  }
+
+  /* 29px bottom + 29px top = 58px visual section rhythm. */
+  .section-inner,
+  .opportunity .section-inner,
+  .mechanism .section-inner,
+  .products .section-inner,
+  .pathway .section-inner,
+  .why .section-inner{
+    padding-top:29px;
+    padding-bottom:29px;
+  }
+  .hero .section-inner{
+    padding-top:42px;
+    padding-bottom:29px;
+  }
+  .final .section-inner{
+    padding-top:29px;
+    padding-bottom:96px;
+  }
+}
+
+@media (max-width: 768px){
+  /* Equal visual gap around the intelligence layer / conversation CTA. */
+  .intel-visual{margin-top:24px;}
+  .mobile-hero-cta{margin-top:24px;}
+
+  /* 19px bottom + 19px top = 38px mobile section rhythm. */
+  .section-inner,
+  .opportunity .section-inner,
+  .mechanism .section-inner,
+  .products .section-inner,
+  .pathway .section-inner,
+  .why .section-inner{
+    padding-top:19px;
+    padding-bottom:19px;
+  }
+  .hero .section-inner{
+    padding-top:24px;
+    padding-bottom:19px;
+  }
+  .final .section-inner{
+    padding-top:19px;
+    padding-bottom:72px;
+  }
+}

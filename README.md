@@ -26,3 +26,11 @@ Upload these files to the root of the existing GitHub repository connected to Cl
 - Mobile intelligence layer and Start A Conversation CTA use equal vertical spacing.
 - Mobile section-to-section spacing standardized to the hero kicker/headline reference rhythm.
 - Displayed Instagram and Telegram handles use lowercase `@raysynix`.
+
+
+## V6 refinements
+- Increased spacing between the mobile Intelligence Layer and Start A Conversation CTA.
+- Removed underline styling from the email contact.
+- Instagram handle links to https://www.instagram.com/raysynix/.
+- Email links with mailto:raysynix@gmail.com.
+- Telegram handle remains linked to https://t.me/Raysynix.

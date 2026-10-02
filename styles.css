@@ -271,3 +271,31 @@ p{margin-top:0}
     padding-bottom:72px;
   }
 }
+
+
+/* V6 final contact + mobile spacing refinements */
+.contact,
+.contact:link,
+.contact:visited,
+.contact:hover,
+.contact:active{
+  color:#fff;
+  text-decoration:none;
+}
+.contact.email,
+.contact.email span{
+  text-decoration:none !important;
+}
+.contact:focus-visible{
+  outline:2px solid #1766ff;
+  outline-offset:4px;
+  border-radius:8px;
+}
+
+@media (max-width:768px){
+  /* Give the mobile CTA more breathing room after the intelligence layer while keeping it aligned. */
+  .mobile-hero-cta{
+    margin-top:44px;
+    margin-left:4px;
+  }
+}

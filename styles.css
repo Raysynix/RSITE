@@ -328,3 +328,17 @@ html, body, body *{
   .products .section-inner{padding-bottom:14px;}
   .pathway .section-inner{padding-top:14px;}
 }
+
+/* V9 — explicit spacing fix for Product process strip → Pathway heading.
+   Keep this transition locked to the same reference rhythm requested by the user. */
+@media (min-width:769px){
+  .products .section-inner{padding-bottom:0;}
+  .products .process-strip{margin-bottom:40px;}
+  .pathway .section-inner{padding-top:0;}
+}
+
+@media (max-width:768px){
+  .products .section-inner{padding-bottom:0;}
+  .products .process-strip{margin-bottom:28px;}
+  .pathway .section-inner{padding-top:0;}
+}

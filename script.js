@@ -10,6 +10,12 @@
     if (event.persisted || !location.hash) requestAnimationFrame(resetToTop);
   });
 
+
+  // Discourage ordinary copying of visible site text.
+  document.addEventListener('copy', (event) => event.preventDefault());
+  document.addEventListener('cut', (event) => event.preventDefault());
+  document.addEventListener('selectstart', (event) => event.preventDefault());
+
   const items = [...document.querySelectorAll('.faq-item')];
   items.forEach((item) => {
     const button = item.querySelector('.faq-question');

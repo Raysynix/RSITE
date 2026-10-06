@@ -299,3 +299,32 @@ p{margin-top:0}
     margin-left:4px;
   }
 }
+
+
+/* V8 approved refinements
+   - What We Build + FAQ slash copy updated in HTML
+   - two requested spacing locations match the Opportunity heading-to-card rhythm
+   - visible site text is non-selectable to discourage ordinary copying
+*/
+
+/* Discourage normal text selection/copying without affecting links/buttons. */
+html, body, body *{
+  -webkit-user-select:none;
+  user-select:none;
+  -webkit-touch-callout:none;
+}
+
+/* Desktop/tablet reference gap: 40px, matching Opportunity heading → first card. */
+@media (min-width:769px){
+  .opportunity-cards{height:390px;}
+  .order-bar{margin-top:40px;}
+  .products .section-inner{padding-bottom:20px;}
+  .pathway .section-inner{padding-top:20px;}
+}
+
+/* Mobile reference gap: 28px, matching Opportunity heading → first card. */
+@media (max-width:768px){
+  .order-bar{margin-top:28px;}
+  .products .section-inner{padding-bottom:14px;}
+  .pathway .section-inner{padding-top:14px;}
+}

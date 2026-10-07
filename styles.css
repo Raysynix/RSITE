@@ -342,3 +342,11 @@ html, body, body *{
   .products .process-strip{margin-bottom:28px;}
   .pathway .section-inner{padding-top:0;}
 }
+
+/* V10: keep the updated custom-domain email clean and responsive */
+.contact.email,
+.contact.email span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
